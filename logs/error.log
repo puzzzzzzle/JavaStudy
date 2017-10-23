@@ -1,0 +1,16 @@
+2017-10-19 10:53:34.722 ERROR [main][Test.java:13] - hello log4j2
+2017-10-19 10:54:21.670 ERROR [main][Test.java:14] - hello log4j2
+2017-10-19 10:55:27.285 ERROR [main][Test.java:15] - hello log4j2
+2017-10-19 10:55:54.741 ERROR [main][Test.java:15] - hello log4j2
+2017-10-19 10:59:20.146 ERROR [main][Test.java:15] - hello log4j2
+2017-10-19 11:01:11.576 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 11:01:35.105 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 11:02:09.420 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 11:03:34.028 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 11:04:23.725 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 11:04:58.310 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 11:08:21.718 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 11:08:55.019 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 12:05:40.294 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 12:06:37.132 ERROR [main][Test.java:16] - hello log4j2
+2017-10-19 22:20:03.163 ERROR [main][Test.java:14] - hello log4j2

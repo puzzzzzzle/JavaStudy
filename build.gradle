@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'kotlin'
 apply plugin: 'maven'
 
 group = 'groupId'
@@ -12,5 +13,13 @@ targetCompatibility = 1.8
 
 
 repositories {
-     maven { url "http://repo.maven.apache.org/maven2" }
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
 }
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    compile group: 'org.apache.logging.log4j2', name: 'log4j2-core', version: '2.9.1'
+}
+
+
+
