@@ -1,4 +1,4 @@
-package group.zhangtao.Socket.file.translater;
+package group.zhangtao.nio.Socket.file.translater;
 
 import java.io.*;
 import java.net.Socket;

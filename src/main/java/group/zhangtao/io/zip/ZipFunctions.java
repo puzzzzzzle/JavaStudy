@@ -1,4 +1,4 @@
-package group.zhangtao.io.stream;
+package group.zhangtao.io.zip;
 
 import java.io.*;
 import java.util.zip.ZipEntry;
@@ -8,8 +8,8 @@ public class ZipFunctions {
 
     public static void main(String[] args) {
         try {
-            zipFile("zipTest", "zipOut.zip");
-            zipFile("test", "testOut.zip");
+            zipFile("测试", "测试.zip");
+//            zipFile("test", "testOut.zip");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,6 +46,7 @@ public class ZipFunctions {
             if (!sourceFile.exists()) {
                 throw new FileNotFoundException("sourceFile not exits");
             }
+            comment = new String(comment.getBytes("8859_1"), "GB2312");
             zipOut.setComment(comment);
             zipEveryFile(zipOut, sourceFile, "", bufferSize);
         }
@@ -64,12 +65,16 @@ public class ZipFunctions {
         if (file.isDirectory()) {
             File[] files = file.listFiles();
             for (File fileSec : files) {
-                zipEveryFile(zipOut, fileSec, baseDir + file.getName() + File.separator, bufferSize);
+                String mBaseDir = baseDir + file.getName() + File.separator;
+                mBaseDir = new String(mBaseDir.getBytes("8859_1"), "GB2312");
+                zipEveryFile(zipOut, fileSec, mBaseDir, bufferSize);
             }
         } else {
             try (InputStream input = new FileInputStream(file)) {
                 byte[] buf = new byte[bufferSize];
-                zipOut.putNextEntry(new ZipEntry(baseDir + file.getName()));
+                String name = baseDir + file.getName();
+                name =  new String(name.getBytes("8859_1"), "GB2312");
+                zipOut.putNextEntry(new ZipEntry(name));
                 int len;
                 while ((len = input.read(buf)) != -1) {
                     zipOut.write(buf, 0, len);
