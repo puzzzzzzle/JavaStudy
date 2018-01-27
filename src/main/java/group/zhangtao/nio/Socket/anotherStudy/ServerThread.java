@@ -43,10 +43,10 @@ public class ServerThread implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             try {
                 Socket socket = serverSocket.accept();
+                System.out.println("Server start at"+port);
                 Thread service = new Thread(new SocketServerTest(socket));
                 service.start();
             } catch (IOException e) {
-//                e.printStackTrace();
                 serverSocket = null;
                 return;
             }

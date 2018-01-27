@@ -4,7 +4,7 @@ import static java.lang.Thread.sleep;
 
 public class DoubleLockSafeLazyPattern {
     private DoubleLockSafeLazyPattern() {
-        System.out.println("Safe lazy Pattern init, time:" + System.currentTimeMillis());
+        System.out.println("Safe lazy Pattern init, time:" + System.nanoTime());
     }
 
     private static DoubleLockSafeLazyPattern instance = null;
@@ -55,10 +55,20 @@ public class DoubleLockSafeLazyPattern {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(System.currentTimeMillis());
+        System.out.println("main start time" + System.nanoTime());
+
         sleep(1000);
-        for (int i = 0; i < 50; i++) {
-            new Thread(() -> System.out.println(DoubleLockSafeLazyPattern.getInstanceOther().toString())).start();
-        }
+//        for (int i = 0; i < 50; i++) {
+//            new Thread(() -> System.out.println(DoubleLockSafeLazyPattern.getInstanceOther().toString())).start();
+//        }
+        WorkThread.testRun(() -> {
+            System.out.println(DoubleLockSafeLazyPattern.getInstanceOther().toString());
+            try {
+                sleep(WorkThread.sleepTime);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
 }

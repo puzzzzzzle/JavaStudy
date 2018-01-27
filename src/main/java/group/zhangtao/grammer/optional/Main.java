@@ -10,7 +10,7 @@ public class Main {
 //        name = Optional.ofNullable("hello");
         System.out.println(name.isPresent());
         name.ifPresent(n-> System.out.println(n));
-        name.ifPresentOrElse(n-> System.out.println(n),()-> System.out.println("none"));
+//        name.ifPresentOrElse(n-> System.out.println(n),()-> System.out.println("none"));
 
     }
 }

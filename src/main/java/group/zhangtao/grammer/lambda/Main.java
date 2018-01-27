@@ -14,7 +14,7 @@ public class Main {
         ;
         System.out.println("main thread end");
         // Java 8之后：
-        List features = Arrays.asList("Lambdas", "Default Method", "Stream API", "Date and Time API");
+        List features = Arrays.asList("Lambdas", "Default Method", "MyStream API", "Date and Time API");
         features.forEach(n -> System.out.println(n));
         features.forEach(System.out::println);
         // 使用Java 8的方法引用更方便，方法引用由::双冒号操作符标示，

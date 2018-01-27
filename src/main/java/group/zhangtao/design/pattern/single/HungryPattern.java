@@ -4,7 +4,7 @@ import static java.lang.Thread.sleep;
 
 public class HungryPattern {
     private HungryPattern(){
-        System.out.println("Hungry pattern init, time:"+System.currentTimeMillis());
+        System.out.println("Hungry pattern init, time:"+System.nanoTime());
     }
     private static HungryPattern instance = new HungryPattern();
     public static HungryPattern getInstance(){
@@ -12,10 +12,12 @@ public class HungryPattern {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(System.currentTimeMillis());
+        System.out.println("main start time"+System.nanoTime());
+
         sleep(1000);
-        for (int i = 0; i < 50; i++) {
-            new Thread(() -> System.out.println(HungryPattern.getInstance().toString())).start();
-        }
+//        for (int i = 0; i < 50; i++) {
+//            new Thread(() -> System.out.println(HungryPattern.getInstance().toString())).start();
+//        }
+        WorkThread.testRun(() -> System.out.println(HungryPattern.getInstance().toString()));
     }
 }

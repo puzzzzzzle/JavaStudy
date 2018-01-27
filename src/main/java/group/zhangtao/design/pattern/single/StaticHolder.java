@@ -5,7 +5,7 @@ import static java.lang.Thread.sleep;
 public class StaticHolder {
 
     private StaticHolder() {
-        System.out.println("static holder init:, time:"+System.currentTimeMillis());
+        System.out.println("static holder init:, time:"+System.nanoTime());
     }
     public static StaticHolder getInstance() {
         return Holder.INSTANCE;
@@ -15,10 +15,11 @@ public class StaticHolder {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(System.currentTimeMillis());
+        System.out.println("main start time"+System.nanoTime());
         sleep(1000);
-        for (int i = 0; i < 50; i++) {
-            new Thread(() -> System.out.println(StaticHolder.getInstance().toString())).start();
-        }
+//        for (int i = 0; i < 50; i++) {
+//            new Thread(() -> System.out.println(StaticHolder.getInstance().toString())).start();
+//        }
+        WorkThread.testRun(() -> System.out.println(StaticHolder.getInstance().toString()));
     }
 }
