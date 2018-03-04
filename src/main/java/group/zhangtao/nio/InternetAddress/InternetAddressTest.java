@@ -11,7 +11,7 @@ public class InternetAddressTest {
             System.out.println("me:" + inetAddress.getHostAddress() + ":" + inetAddress.getHostName());
             InetAddress[] baidu = InetAddress.getAllByName("www.baidu.com");
             Arrays.stream(baidu).forEach((n) -> System.out.println(n.getHostAddress() + ":" + n.getHostName()));
-            Arrays.asList(baidu).forEach((n) -> System.out.println(n.getHostAddress() + ":" + n.getHostName()));
+//            Arrays.asList(baidu).forEach((n) -> System.out.println(n.getHostAddress() + ":" + n.getHostName()));
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }

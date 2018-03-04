@@ -9,16 +9,12 @@ public class CallableTest implements Callable<Integer> {
     public static void main(String[] args) {
         FutureTask<Integer> future = new FutureTask<>(new CallableTest());
         Thread thread = new Thread(future);
-        thread.run();
+        thread.start();
         try {
-            Thread.sleep(5000);
+            int result = future.get();
             System.out.println("wake up");
-            long time = System.currentTimeMillis();
-            System.out.println(future.get());
-            System.out.println("get time:" + (System.currentTimeMillis() - time));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+            System.out.println(result);
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
     }

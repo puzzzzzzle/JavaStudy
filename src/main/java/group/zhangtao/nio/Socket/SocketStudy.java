@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class SocketStudy extends Thread {
 
@@ -39,6 +40,7 @@ public class SocketStudy extends Thread {
                 Thread server = new MySocketServer(in);
                 server.start();
                 System.out.println("now:" + ++i);
+
             }
         } catch (IOException e) {
             e.printStackTrace();

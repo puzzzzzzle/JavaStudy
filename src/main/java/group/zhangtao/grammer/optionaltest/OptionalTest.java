@@ -10,6 +10,7 @@ public class OptionalTest {
         Class intClass = int.class;
         Class integerClass = Integer.class;
         System.out.println(intClass.getName());
+        System.out.println(intClass.getMethods().length);
         System.out.println(integerClass.getName());
 
     }
