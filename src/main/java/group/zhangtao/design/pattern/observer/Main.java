@@ -6,9 +6,9 @@ public class Main {
         Subject subject = new Subject();
         new MyObserver(subject);
         new AnotherObserver(subject);
-        System.out.println("改变状态：10");
+        System.out.println("change stat : 10");
         subject.setState(10);
-        System.out.println("改变状态：20");
+        System.out.println("change stat : 20");
         subject.setState(20);
     }
 }

@@ -39,7 +39,7 @@ public class Consumer implements Runnable ,StopController{
                 resourceHandle.producerMonitor.notifyAll();
             }
             synchronized (resourceHandle.customerMonitor){
-                System.out.println(String.format("Empty ： %d wait",id));
+                System.out.println(String.format("Empty : %d wait",id));
                 resourceHandle.customerMonitor.wait();
             }
         }else {
