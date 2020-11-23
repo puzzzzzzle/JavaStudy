@@ -1,4 +1,6 @@
-.gradle
-build
-gradle
-out
+*
+!src
+!build.gradle
+!settings.gradle
+!.gitignore
+!gradlew*

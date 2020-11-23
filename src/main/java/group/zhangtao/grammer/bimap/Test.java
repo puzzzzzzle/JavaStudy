@@ -11,5 +11,7 @@ public class Test {
         logfileMap.put(3,"c_txt");
         logfileMap.put(4,"d_txt");
 //        logfileMap.put(5,"d_txt");
+        System.out.println("get 1 : "+logfileMap.get(1));
+        System.out.println("get a_txt : "+logfileMap.inverse().get("a_txt"));
     }
 }
